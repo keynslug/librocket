@@ -21,7 +21,7 @@ set(LIBROCKET_VERSION_PATCH 1)
 set(PROJECT_VERSION ${LIBROCKET_VERSION_MAJOR}.${LIBROCKET_VERSION_MINOR}.${LIBROCKET_VERSION_PATCH})
 
 # Search in the 'cmake' directory for additional CMake modules.
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 set(CMAKE_DEBUG_POSTFIX  "_d")
 
@@ -47,6 +47,7 @@ endif()
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 option(BUILD_PYTHON_BINDINGS "Build python bindings" OFF)
 option(BUILD_SAMPLES "Build samples" OFF)
+option(BUILD_CONTRIB "Build contrib libraries" OFF)
 
 if(NOT BUILD_SHARED_LIBS)
     add_definitions(-DSTATIC_LIB)
@@ -154,6 +155,33 @@ if(BUILD_PYTHON_BINDINGS)
     endforeach(library)
 endif()
 
+# Build contrib libraries
+if(BUILD_CONTRIB)
+	include(ContribFileList)
+	include_directories(
+	    ${PROJECT_SOURCE_DIR}/Contrib/Include
+		)
+		
+    set(LIBRARIES ProgressBar)
+
+    foreach(library ${LIBRARIES})
+        set(NAME Rocket${library})
+
+        add_library(${NAME} ${Contrib${library}_SRC_FILES}
+                            ${Contrib${library}_HDR_FILES}
+                            ${Contrib${library}_PUB_HDR_FILES}
+        )
+
+        set_target_properties(${NAME} PROPERTIES PREFIX "")
+
+        install(TARGETS ${NAME}
+                LIBRARY DESTINATION lib
+            	ARCHIVE DESTINATION lib
+            	RUNTIME DESTINATION bin
+        )
+    endforeach(library)
+endif()
+
 
 #===================================
 # Link libraries ===================
@@ -166,6 +194,10 @@ target_link_libraries(RocketDebugger RocketCore)
 if(BUILD_PYTHON_BINDINGS)
     target_link_libraries(_rocketcore RocketCore ${PY_BINDINGS_LINK_LIBS})
     target_link_libraries(_rocketcontrols RocketControls ${PY_BINDINGS_LINK_LIBS})
+endif()
+
+if(BUILD_CONTRIB)
+	target_link_libraries(RocketProgressBar RocketCore)
 endif()
 
 
