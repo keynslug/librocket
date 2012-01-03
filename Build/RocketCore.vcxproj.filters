@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Precompiled Header">
+      <UniqueIdentifier>{11dddefe-2bfb-46ef-ab3c-c1d8e8c4b285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{572edbe8-73f9-4ec2-9cb7-87a0426690b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element">
+      <UniqueIdentifier>{fb5e2e6f-619e-4633-adc0-9e9719f759bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Layout">
+      <UniqueIdentifier>{d6af1c62-0d5c-452c-8e77-59860546cfc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Instancer">
+      <UniqueIdentifier>{19fc40b4-cd06-4f53-93f0-b8c0475baf3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Parser">
+      <UniqueIdentifier>{4c7d8e0e-0c98-4aec-99a1-5543e2e170b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Definition">
+      <UniqueIdentifier>{6654b421-be93-45d8-8bfa-3996e1cc4580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Text">
+      <UniqueIdentifier>{c1e721bf-f6d0-41d1-a8a9-9a908bf03585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Handle">
+      <UniqueIdentifier>{044d63d0-39fc-4aaa-86f8-e158711e0302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Widgets">
+      <UniqueIdentifier>{2d638b53-2057-482c-9e45-dde8039e16fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Image">
+      <UniqueIdentifier>{661160e6-8fa9-4d7b-9c2b-e4c15a32ece7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Element\Document">
+      <UniqueIdentifier>{46ec3d0f-d765-4ce1-8f32-5b0f1b67a4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geometry">
+      <UniqueIdentifier>{9c3ee99a-3274-410e-8330-4dd40f89fdf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator">
+      <UniqueIdentifier>{2e7c714c-a0bb-44c8-a3c5-e369a40e3e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators">
+      <UniqueIdentifier>{b1ce4568-0ab6-4213-a77d-0168dd9be759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators\Tile">
+      <UniqueIdentifier>{213631c2-2cbc-4aeb-8e55-0334330f2428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators\Tile\Horizontal">
+      <UniqueIdentifier>{e4e5c9c3-9152-4579-b76f-60ddc4d1e909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators\Tile\Box">
+      <UniqueIdentifier>{71661679-b969-42df-a7b2-38ee9e35f2f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators\Tile\Image">
+      <UniqueIdentifier>{cdddd6a7-e812-4a01-bb56-b72f6510103f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decorator\Decorators\Tile\Vertical">
+      <UniqueIdentifier>{f794ff4a-8e3d-4b78-ad77-01b762ede33f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Style Sheet">
+      <UniqueIdentifier>{5dd61769-98ad-4e93-9c92-e413f11edc8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Style Sheet\Property">
+      <UniqueIdentifier>{45838535-dc21-4aba-9702-ca8c0c944562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Style Sheet\Property\Definition">
+      <UniqueIdentifier>{e9cad412-5e7e-40ef-94f0-e30a235e790c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Style Sheet\Property\Definition\Parser">
+      <UniqueIdentifier>{6ac0db24-01d4-4206-a208-5972dbb5c03d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Style Sheet\Selectors">
+      <UniqueIdentifier>{cf67ce7a-b831-49a1-945d-ba2bc02a748c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{2c9c25f1-662f-462c-8880-76fae2e49995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts">
+      <UniqueIdentifier>{1a390b4c-6992-414e-b82a-360ae23eb646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Texture Layout">
+      <UniqueIdentifier>{a7e373c5-1aef-43a4-9213-89e110623c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect">
+      <UniqueIdentifier>{f5b3bc68-d1a4-488d-84d6-322b52871d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect\Effects">
+      <UniqueIdentifier>{cd15e069-4ef9-41a3-a167-4e7dacdd85d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect\Effects\None">
+      <UniqueIdentifier>{24090fa7-cbe2-4597-ae8d-d5bf0d2222fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect\Effects\Outline">
+      <UniqueIdentifier>{7cd19e58-5fd9-40d5-bd84-75a833a76fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect\Effects\Shadow">
+      <UniqueIdentifier>{151b129f-e092-4f52-ac7d-010d9489d84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts\Effect\Effects\Convolution Filter">
+      <UniqueIdentifier>{2a796a71-45c9-41a5-b9cc-3f6540131ceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Templates">
+      <UniqueIdentifier>{29458e51-450b-46a5-a8c8-b38b17bd5f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{96672780-7930-4642-80d6-840d6b9b5f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces">
+      <UniqueIdentifier>{63f661a7-a3b9-46ca-97d7-9fd8c28f5c9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces\Renderer">
+      <UniqueIdentifier>{2712a95a-72dd-4806-9d5f-d8b86081f474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces\File">
+      <UniqueIdentifier>{75ea88db-63aa-4d77-b8bd-aa4066f0ae63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interfaces\System">
+      <UniqueIdentifier>{50fbcac5-e8f2-4ebf-8085-9498da390ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\String">
+      <UniqueIdentifier>{c02dc737-fe9c-4416-8d4f-5e90ad2a618d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Plugin">
+      <UniqueIdentifier>{448a063c-ed89-4651-ad50-3fe45eb13ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Types">
+      <UniqueIdentifier>{81b75435-e980-4499-8e17-4570dcab9841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context">
+      <UniqueIdentifier>{e37b7be9-bbfa-4761-906b-03862e473800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String Cache">
+      <UniqueIdentifier>{f30390d8-0099-4344-807b-43961a23adb7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Core\precompiled.cpp">
+      <Filter>Precompiled Header</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Texture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureDatabase.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureResource.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Box.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DocumentHeader.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Element.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementBackground.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementBorder.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementDecoration.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementReference.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementScroll.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementStyle.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementUtilities.cpp">
+      <Filter>Element</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutBlockBox.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutBlockBoxSpace.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutEngine.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutInlineBox.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutInlineBoxText.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\LayoutLineBox.cpp">
+      <Filter>Element\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementInstancer.cpp">
+      <Filter>Element\Instancer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLNodeHandler.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLNodeHandlerBody.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLNodeHandlerDefault.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLNodeHandlerHead.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLNodeHandlerTemplate.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLParser.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\XMLParseTools.cpp">
+      <Filter>Element\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementDefinition.cpp">
+      <Filter>Element\Definition</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementText.cpp">
+      <Filter>Element\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementTextDefault.cpp">
+      <Filter>Element\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementHandle.cpp">
+      <Filter>Element\Handle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\WidgetSlider.cpp">
+      <Filter>Element\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\WidgetSliderScroll.cpp">
+      <Filter>Element\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementImage.cpp">
+      <Filter>Element\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ElementDocument.cpp">
+      <Filter>Element\Document</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Geometry.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\GeometryDatabase.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\GeometryUtilities.cpp">
+      <Filter>Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Decorator.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorInstancer.cpp">
+      <Filter>Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorNone.cpp">
+      <Filter>Decorator\Decorators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorNoneInstancer.cpp">
+      <Filter>Decorator\Decorators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiled.cpp">
+      <Filter>Decorator\Decorators\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledInstancer.cpp">
+      <Filter>Decorator\Decorators\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledHorizontal.cpp">
+      <Filter>Decorator\Decorators\Tile\Horizontal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledHorizontalInstancer.cpp">
+      <Filter>Decorator\Decorators\Tile\Horizontal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledBox.cpp">
+      <Filter>Decorator\Decorators\Tile\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledBoxInstancer.cpp">
+      <Filter>Decorator\Decorators\Tile\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledImage.cpp">
+      <Filter>Decorator\Decorators\Tile\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledImageInstancer.cpp">
+      <Filter>Decorator\Decorators\Tile\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledVertical.cpp">
+      <Filter>Decorator\Decorators\Tile\Vertical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\DecoratorTiledVerticalInstancer.cpp">
+      <Filter>Decorator\Decorators\Tile\Vertical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheet.cpp">
+      <Filter>Style Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetFactory.cpp">
+      <Filter>Style Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNode.cpp">
+      <Filter>Style Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetParser.cpp">
+      <Filter>Style Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetSpecification.cpp">
+      <Filter>Style Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Property.cpp">
+      <Filter>Style Sheet\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyDictionary.cpp">
+      <Filter>Style Sheet\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyDefinition.cpp">
+      <Filter>Style Sheet\Property\Definition</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertySpecification.cpp">
+      <Filter>Style Sheet\Property\Definition</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyParserColour.cpp">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyParserKeyword.cpp">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyParserNumber.cpp">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PropertyParserString.cpp">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelector.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorEmpty.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorFirstChild.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorFirstOfType.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorLastChild.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorLastOfType.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorNthChild.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorNthLastChild.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorNthLastOfType.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorNthOfType.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorOnlyChild.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StyleSheetNodeSelectorOnlyOfType.cpp">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Event.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\EventDispatcher.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\EventInstancer.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\EventInstancerDefault.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\EventListenerInstancer.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontDatabase.cpp">
+      <Filter>Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontFaceHandle.cpp">
+      <Filter>Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontFaceLayer.cpp">
+      <Filter>Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\UnicodeRange.cpp">
+      <Filter>Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureLayout.cpp">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureLayoutRectangle.cpp">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureLayoutRow.cpp">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TextureLayoutTexture.cpp">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffect.cpp">
+      <Filter>Fonts\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectInstancer.cpp">
+      <Filter>Fonts\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectNone.cpp">
+      <Filter>Fonts\Effect\Effects\None</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectNoneInstancer.cpp">
+      <Filter>Fonts\Effect\Effects\None</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectOutline.cpp">
+      <Filter>Fonts\Effect\Effects\Outline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectOutlineInstancer.cpp">
+      <Filter>Fonts\Effect\Effects\Outline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectShadow.cpp">
+      <Filter>Fonts\Effect\Effects\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FontEffectShadowInstancer.cpp">
+      <Filter>Fonts\Effect\Effects\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ConvolutionFilter.cpp">
+      <Filter>Fonts\Effect\Effects\Convolution Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Template.cpp">
+      <Filter>Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\TemplateCache.cpp">
+      <Filter>Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Clock.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Core.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Factory.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Log.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Math.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\RenderInterface.cpp">
+      <Filter>Core\Interfaces\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FileInterface.cpp">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\FileInterfaceDefault.cpp">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StreamFile.cpp">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\SystemInterface.cpp">
+      <Filter>Core\Interfaces\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\String.cpp">
+      <Filter>Core\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Plugin.cpp">
+      <Filter>Core\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\PluginRegistry.cpp">
+      <Filter>Core\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\BaseXMLParser.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Dictionary.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ReferenceCountable.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Stream.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StreamMemory.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StringUtilities.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\URL.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Variant.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Vector2.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\WString.cpp">
+      <Filter>Core\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\Context.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ContextInstancer.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\ContextInstancerDefault.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Core\StringCache.cpp">
+      <Filter>String Cache</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Core\precompiled.h">
+      <Filter>Precompiled Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Texture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureDatabase.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureResource.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Box.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DocumentHeader.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Element.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementBackground.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementBorder.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementDecoration.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementReference.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementScroll.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementStyle.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementUtilities.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutBlockBox.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutBlockBoxSpace.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutEngine.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutInlineBox.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutInlineBoxText.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\LayoutLineBox.h">
+      <Filter>Element\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementInstancer.h">
+      <Filter>Element\Instancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementInstancerGeneric.h">
+      <Filter>Element\Instancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\XMLNodeHandler.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\XMLNodeHandlerBody.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\XMLNodeHandlerDefault.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\XMLNodeHandlerHead.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\XMLNodeHandlerTemplate.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\XMLParser.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\XMLParseTools.h">
+      <Filter>Element\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementDefinition.h">
+      <Filter>Element\Definition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementText.h">
+      <Filter>Element\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementTextDefault.h">
+      <Filter>Element\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementHandle.h">
+      <Filter>Element\Handle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\WidgetSlider.h">
+      <Filter>Element\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\WidgetSliderScroll.h">
+      <Filter>Element\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ElementImage.h">
+      <Filter>Element\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ElementDocument.h">
+      <Filter>Element\Document</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Geometry.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\GeometryDatabase.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\GeometryUtilities.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Vertex.h">
+      <Filter>Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Decorator.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\DecoratorInstancer.h">
+      <Filter>Decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorNone.h">
+      <Filter>Decorator\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorNoneInstancer.h">
+      <Filter>Decorator\Decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiled.h">
+      <Filter>Decorator\Decorators\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledInstancer.h">
+      <Filter>Decorator\Decorators\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledHorizontal.h">
+      <Filter>Decorator\Decorators\Tile\Horizontal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledHorizontalInstancer.h">
+      <Filter>Decorator\Decorators\Tile\Horizontal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledBox.h">
+      <Filter>Decorator\Decorators\Tile\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledBoxInstancer.h">
+      <Filter>Decorator\Decorators\Tile\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledImage.h">
+      <Filter>Decorator\Decorators\Tile\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledImageInstancer.h">
+      <Filter>Decorator\Decorators\Tile\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledVertical.h">
+      <Filter>Decorator\Decorators\Tile\Vertical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\DecoratorTiledVerticalInstancer.h">
+      <Filter>Decorator\Decorators\Tile\Vertical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StyleSheet.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetFactory.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StyleSheetKeywords.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNode.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetParser.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StyleSheetSpecification.h">
+      <Filter>Style Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Property.h">
+      <Filter>Style Sheet\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\PropertyDictionary.h">
+      <Filter>Style Sheet\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\PropertyDefinition.h">
+      <Filter>Style Sheet\Property\Definition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PropertyShorthandDefinition.h">
+      <Filter>Style Sheet\Property\Definition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\PropertySpecification.h">
+      <Filter>Style Sheet\Property\Definition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\PropertyParser.h">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PropertyParserColour.h">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PropertyParserKeyword.h">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PropertyParserNumber.h">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PropertyParserString.h">
+      <Filter>Style Sheet\Property\Definition\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelector.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorEmpty.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorFirstChild.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorFirstOfType.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorLastChild.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorLastOfType.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorNthChild.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorNthLastChild.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorNthLastOfType.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorNthOfType.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorOnlyChild.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StyleSheetNodeSelectorOnlyOfType.h">
+      <Filter>Style Sheet\Selectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\EventDispatcher.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\EventInstancer.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\EventInstancerDefault.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\EventIterators.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\EventListener.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\EventListenerInstancer.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Input.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Font.h">
+      <Filter>Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\FontDatabase.h">
+      <Filter>Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontFaceLayer.h">
+      <Filter>Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\FontGlyph.h">
+      <Filter>Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\UnicodeRange.h">
+      <Filter>Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureLayout.h">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureLayoutRectangle.h">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureLayoutRow.h">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TextureLayoutTexture.h">
+      <Filter>Fonts\Texture Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\FontEffect.h">
+      <Filter>Fonts\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\FontEffectInstancer.h">
+      <Filter>Fonts\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectNone.h">
+      <Filter>Fonts\Effect\Effects\None</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectNoneInstancer.h">
+      <Filter>Fonts\Effect\Effects\None</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectOutline.h">
+      <Filter>Fonts\Effect\Effects\Outline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectOutlineInstancer.h">
+      <Filter>Fonts\Effect\Effects\Outline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectShadow.h">
+      <Filter>Fonts\Effect\Effects\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FontEffectShadowInstancer.h">
+      <Filter>Fonts\Effect\Effects\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ConvolutionFilter.h">
+      <Filter>Fonts\Effect\Effects\Convolution Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\Template.h">
+      <Filter>Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\TemplateCache.h">
+      <Filter>Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\Clock.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Factory.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Header.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Log.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Types.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\RenderInterface.h">
+      <Filter>Core\Interfaces\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\FileInterface.h">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\FileInterfaceDefault.h">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StreamFile.h">
+      <Filter>Core\Interfaces\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\SystemInterface.h">
+      <Filter>Core\Interfaces\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\String.h">
+      <Filter>Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Plugin.h">
+      <Filter>Core\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\PluginRegistry.h">
+      <Filter>Core\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\BaseXMLParser.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Colour.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Debug.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Dictionary.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ScriptInterface.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Stream.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StreamMemory.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StringBase.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\StringUtilities.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\URL.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Variant.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Vector2.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\WString.h">
+      <Filter>Core\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\Context.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core\ContextInstancer.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\ContextInstancerDefault.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Core\StringCache.h">
+      <Filter>String Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rocket\Core.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Include\Rocket\Core\Element.inl">
+      <Filter>Element</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\ElementInstancerGeneric.inl">
+      <Filter>Element\Instancer</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\Colour.inl">
+      <Filter>Core\Types</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\Dictionary.inl">
+      <Filter>Core\Types</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\StringBase.inl">
+      <Filter>Core\Types</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\Variant.inl">
+      <Filter>Core\Types</Filter>
+    </None>
+    <None Include="..\Include\Rocket\Core\Vector2.inl">
+      <Filter>Core\Types</Filter>
+    </None>
+  </ItemGroup>
+</Project>
