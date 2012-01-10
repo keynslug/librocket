@@ -28,6 +28,7 @@
 #include "../precompiled.h"
 #include "FontFaceLayer.h"
 #include <Rocket/Core/FontFaceHandle.h>
+#include "FontFaceHandle.h"
 
 namespace Rocket {
 namespace Core {
@@ -46,10 +47,15 @@ FontFaceLayer::~FontFaceLayer()
 }
 
 // Generates the character and texture data for the layer.
-bool FontFaceLayer::Initialise(const FontFaceHandle* _handle, FontEffect* _effect, const Rocket::Core::FontFaceLayer* clone, bool deep_clone)
+bool FontFaceLayer::Initialise(const Rocket::Core::FontFaceHandle* _handle, FontEffect* _effect, const Rocket::Core::FontFaceLayer* clone, bool deep_clone)
 {
+    Rocket::Core::BitmapFont::FontFaceHandle
+        * bm_font_face_handle;
+
 	handle = _handle;
 	effect = _effect;
+
+    bm_font_face_handle = ( Rocket::Core::BitmapFont::FontFaceHandle * ) handle;
 
 	if (effect != NULL)
     {
@@ -86,17 +92,17 @@ bool FontFaceLayer::Initialise(const FontFaceHandle* _handle, FontEffect* _effec
             character.texture_index = 0;
 
             // Generate the character's texture coordinates.
-            character.texcoords[0].x = float(glyph_origin.x) / float(handle->GetTextureSize());
-            character.texcoords[0].y = float(glyph_origin.y) / float(handle->GetTextureSize());
-            character.texcoords[1].x = float(glyph_origin.x + character.dimensions.x) / float(handle->GetTextureSize());
-            character.texcoords[1].y = float(glyph_origin.y + character.dimensions.y) / float(handle->GetTextureSize());
+            character.texcoords[0].x = float(glyph_origin.x) / float(bm_font_face_handle->GetTextureSize());
+            character.texcoords[0].y = float(glyph_origin.y) / float(bm_font_face_handle->GetTextureSize());
+            character.texcoords[1].x = float(glyph_origin.x + character.dimensions.x) / float(bm_font_face_handle->GetTextureSize());
+            character.texcoords[1].y = float(glyph_origin.y + character.dimensions.y) / float(bm_font_face_handle->GetTextureSize());
 
             characters[i->first] = character;
 
         }
 
         Texture texture;
-        if (!texture.Load( handle->GetTextureBaseName() + "_0.tga", handle->GetTextureDirectory() ) )
+        if (!texture.Load( bm_font_face_handle->GetTextureBaseName() + "_0.tga", bm_font_face_handle->GetTextureDirectory() ) )
             return false;
         textures.push_back(texture); 
     }
@@ -108,7 +114,6 @@ bool FontFaceLayer::Initialise(const FontFaceHandle* _handle, FontEffect* _effec
 // Generates the texture data for a layer (for the texture database).
 bool FontFaceLayer::GenerateTexture(const byte*& texture_data, Vector2i& texture_dimensions, int texture_id)
 {
-	
 	return true;
 }
 

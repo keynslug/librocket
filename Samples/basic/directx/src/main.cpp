@@ -28,6 +28,10 @@
 #include <Rocket/Core.h>
 #include <Rocket/Debugger.h>
 #include <Rocket/Core/BitmapFont/FontProvider.h>
+<<<<<<< HEAD
+=======
+#include <Rocket/Core/FreeType/FontProvider.h>
+>>>>>>> bm_font_provider
 #include <Input.h>
 #include <Shell.h>
 #include "RenderInterfaceDirectX.h"
@@ -157,6 +161,10 @@ int main(int ROCKET_UNUSED(argc), char** ROCKET_UNUSED(argv))
 
 	Rocket::Core::Initialise();
     Rocket::Core::BitmapFont::FontProvider::Initialise();
+<<<<<<< HEAD
+=======
+    Rocket::Core::FreeType::FontProvider::Initialise();
+>>>>>>> bm_font_provider
 
 	// Create the main Rocket context and set it on the shell's input layer.
 	context = Rocket::Core::CreateContext("main", Rocket::Core::Vector2i(1024, 768));
@@ -169,8 +177,14 @@ int main(int ROCKET_UNUSED(argc), char** ROCKET_UNUSED(argv))
 
 	Rocket::Debugger::Initialise(context);
 	Input::SetContext(context);
+<<<<<<< HEAD
 
 	Shell::LoadFonts("../../assets/BitmapFont/");
+=======
+    
+    Shell::LoadFonts("../../assets/");
+    Shell::LoadBitmapFonts("../../assets/BitmapFont/");
+>>>>>>> bm_font_provider
 
 	// Load and show the tutorial document.
 	Rocket::Core::ElementDocument* document = context->LoadDocument("../../assets/demo.rml");
