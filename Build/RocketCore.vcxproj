@@ -355,6 +355,7 @@
     <ClInclude Include="..\Source\Core\ContextInstancerDefault.h" />
     <ClInclude Include="..\Source\Core\StringCache.h" />
     <ClInclude Include="..\Include\Rocket\Core.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Include\Rocket\Core\Element.inl" />
@@ -364,6 +365,9 @@
     <None Include="..\Include\Rocket\Core\StringBase.inl" />
     <None Include="..\Include\Rocket\Core\Variant.inl" />
     <None Include="..\Include\Rocket\Core\Vector2.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RocketCore.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

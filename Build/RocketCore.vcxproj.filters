@@ -954,6 +954,7 @@
       <Filter>String Cache</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Rocket\Core.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Include\Rocket\Core\Element.inl">
@@ -977,5 +978,8 @@
     <None Include="..\Include\Rocket\Core\Vector2.inl">
       <Filter>Core\Types</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RocketCore.rc" />
   </ItemGroup>
 </Project>

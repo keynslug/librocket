@@ -1,0 +1,67 @@
+<project name="libRocket" default="upload_symbols" xmlns:mojito="antlib:com.fishingcactus.mojito.ant" basedir=".">
+
+    <property environment="env" />
+    
+    <property name="mojito_home" location="${env.MOJITO}"/>
+    <property name="mojito_tools" location="${env.MOJITO_TOOLS}"/>
+
+    <condition property="antelope.jar" value="${mojito_tools}/AntelopeTasks.jar">
+        <resourceexists>
+            <file file="${mojito_tools}/AntelopeTasks.jar"/>
+        </resourceexists>
+    </condition>
+    
+    <property name="antelope.jar" value="${mojito_home}/COMMON/TOOLS/ANT_PLUGINS/AntelopeTasks.jar"/>
+
+    <condition property="ant-mojito.jar" value="${mojito_tools}/ant-mojito.jar">
+        <resourceexists>
+            <file file="${mojito_tools}/ant-mojito.jar"/>
+        </resourceexists>
+    </condition>
+    
+    <taskdef name="grep" classname="ise.antelope.tasks.Find" classpath="${antelope.jar}"/>
+        
+    <target name="generate_symbols_win32">
+        <echo message="Dumping symbols from ${exe_or_pdb_file}..." />
+        
+        <delete file="${exe_or_pdb_file}.sym" quiet="true"/>
+        <exec executable="m:\MOJITO\APP\TOOLS\PC\dump_syms.exe" output="${exe_or_pdb_file}.sym">
+            <arg value="${exe_or_pdb_file}"/>
+        </exec>
+        
+        <antcall target="copy_symbol_file_win32">
+            <param name="breakpad_symbol_file" value="${exe_or_pdb_file}.sym"/>
+        </antcall>
+    </target>
+    
+    <target name="copy_symbol_file_win32">
+        <echo message="Loading file ${breakpad_symbol_file}..." />
+        <loadfile srcfile="${breakpad_symbol_file}" property="symbol.header">
+            <filterchain>
+                <headfilter lines="1"/>
+            </filterchain>
+        </loadfile>
+        
+        <grep in="${symbol.header}" regex="MODULE .+ .+ ([a-zA-Z0-9]+) ([a-zA-Z0-9\.]+)" group="1" property="oid"/>
+        <grep in="${symbol.header}" regex="MODULE .+ .+ ([a-zA-Z0-9]+) ([a-zA-Z0-9\.]+)" group="2" property="pdb_name"/>
+        <grep in="${symbol.header}" regex="MODULE .+ .+ ([a-zA-Z0-9]+) ([a-zA-Z0-9\.]+)\.pdb" group="2" property="file_name"/>
+        
+        <echo message="Copying file ${breakpad_symbol_file} to //storage/symbols/${pdb_name}/${oid}/${file_name}.sym..." />
+        
+        <mkdir dir="//storage/symbols/${pdb_name}/${oid}/" />
+        <copy file="${breakpad_symbol_file}" tofile="//storage/symbols/${pdb_name}/${oid}/${file_name}.sym" />
+    </target>
+    
+    <target name="upload_symbols">
+        <antcall target="generate_symbols_win32">
+            <param name="exe_or_pdb_file" value="bin\RocketCore.dll"/>
+        </antcall>
+        <antcall target="generate_symbols_win32">
+            <param name="exe_or_pdb_file" value="bin\RocketControls.dll"/>
+        </antcall>
+        <antcall target="generate_symbols_win32">
+            <param name="exe_or_pdb_file" value="bin\RocketFreeType.dll"/>
+        </antcall>
+    </target>
+    
+</project>

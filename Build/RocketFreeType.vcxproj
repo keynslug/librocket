@@ -107,12 +107,16 @@
     <ClInclude Include="..\Source\Core\FreeType\FontFace.h" />
     <ClInclude Include="..\Source\Core\FreeType\FontFaceHandle.h" />
     <ClInclude Include="..\Source\Core\FreeType\FontFamily.h" />
+    <ClInclude Include="resource2.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="RocketCore.vcxproj">
       <Project>{1aac0b29-aeb9-4e3f-8edf-b46f8949c41b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RocketFreeType.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
