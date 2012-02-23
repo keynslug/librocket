@@ -91,6 +91,14 @@ public:
 		return (x == '\r' || x == '\n' || x == ' ' || x == '\t');
 	}
 
+	/// Checks if a given value is a zero width whitespace character.
+	/// @param[in] x The character to evaluate.
+	/// @return True if the character is zero width whitespace, false otherwise.
+	static bool IsZeroWidthSpace(unsigned short x)
+	{
+		return (x == L'\u200C');
+	}
+
 	/// Strip whitespace characters from the beginning and end of a string.
 	/// @param[in] string The string to trim.
 	/// @return The stripped string.
