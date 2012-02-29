@@ -50,7 +50,7 @@ void FontParser::HandleElementStart(const String& name, const XMLAttributes& att
     if ( name == "info" )
     {
         BM_face->Face.FamilyName = attributes.Get( "face" )->Get< String >();
-        BM_face->Face.Size = attributes.Get( "size" )->Get< int >();
+        BM_face->Face.Size = abs( attributes.Get( "size" )->Get< int >() );
         BM_face->Face.Weight = attributes.Get( "bold" )->Get< bool >() ? Font::WEIGHT_BOLD : Font::WEIGHT_NORMAL;
         BM_face->Face.Style = attributes.Get( "italic" )->Get< bool >() ? Font::STYLE_ITALIC : Font::STYLE_NORMAL;
         BM_face->Face.CharsetName = attributes.Get( "charset" )->Get< String >();
