@@ -67,6 +67,11 @@ Font::Weight FontFace::GetWeight() const
 	return weight;
 }
 
+int FontFace::GetSize() const
+{
+	return face->Face.Size;
+}
+
 // Returns a handle for positioning and rendering this face at the given size.
 Rocket::Core::FontFaceHandle* FontFace::GetHandle(const String& _raw_charset, int size)
 {

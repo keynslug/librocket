@@ -54,6 +54,8 @@ public:
 	/// @return The font face's weight.
 	Font::Weight GetWeight() const;
 
+	int GetSize() const;
+
 	/// Returns a handle for positioning and rendering this face at the given size.
 	/// @param[in] charset The set of characters in the handle, as a comma-separated list of unicode ranges.
 	/// @param[in] size The size of the desired handle, in points.

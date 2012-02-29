@@ -65,7 +65,7 @@ Rocket::Core::FontFaceHandle* FontFamily::GetFaceHandle(const String& charset, F
 		{
 			matching_face = font_faces[i];
 
-			if (font_faces[i]->GetWeight() == weight)
+			if (font_faces[i]->GetWeight() == weight && font_faces[i]->GetSize() == size)
 				break;
 		}
 	}
