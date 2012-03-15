@@ -69,6 +69,7 @@
             <fileset dir="./bin">
                 <include name="**/*.lib" />
                 <include name="**/*.dll" />
+                <include name="**/*.pdb" />
             </fileset>
         </copy>
     </target>
