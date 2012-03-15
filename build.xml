@@ -1,4 +1,4 @@
-<project name="libRocket" default="upload_symbols" xmlns:mojito="antlib:com.fishingcactus.mojito.ant" basedir=".">
+<project name="libRocket" default="copy_libs" xmlns:mojito="antlib:com.fishingcactus.mojito.ant" basedir=".">
 
     <property environment="env" />
     
@@ -62,6 +62,15 @@
         <antcall target="generate_symbols_win32">
             <param name="exe_or_pdb_file" value="bin\RocketFreeType.dll"/>
         </antcall>
+    </target>
+    
+    <target name="copy_libs">
+        <copy todir="${mojito_home}/COMMON/librocket/bin/">
+            <fileset dir="./bin">
+                <include name="**/*.lib" />
+                <include name="**/*.dll" />
+            </fileset>
+        </copy>
     </target>
     
 </project>
