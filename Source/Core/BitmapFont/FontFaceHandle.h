@@ -103,7 +103,7 @@ public:
         return TextureDirectory;
     }
 
-    int GetTextureSize() const
+    Vector2i GetTextureSize() const
     {
         return TextureSize;
     }
@@ -126,7 +126,7 @@ private:
 
     String TextureBaseName;
     String TextureDirectory;
-    int TextureSize;
+    Vector2i TextureSize;
 };
 
 }

@@ -65,12 +65,10 @@ FontFaceHandle::~FontFaceHandle()
 // Initialises the handle so it is able to render text.
 bool FontFaceHandle::Initialise(BM_Font *bm_face, const String& _charset, int _size)
 {
-	ROCKET_ASSERT( bm_face->CommonCharactersInfo.ScaleHeight == bm_face->CommonCharactersInfo.ScaleWidth );
-
 	size = _size;
 	TextureBaseName = bm_face->Face.Source;
 	TextureDirectory = bm_face->Face.Directory;
-	TextureSize = bm_face->CommonCharactersInfo.ScaleHeight;
+	TextureSize = Vector2i( bm_face->CommonCharactersInfo.ScaleWidth, bm_face->CommonCharactersInfo.ScaleHeight );
 	raw_charset = _charset;
 
 	if (!UnicodeRange::BuildList(charset, raw_charset))

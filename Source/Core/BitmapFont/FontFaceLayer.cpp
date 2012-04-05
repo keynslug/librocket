@@ -93,10 +93,10 @@ bool FontFaceLayer::Initialise(const Rocket::Core::FontFaceHandle* _handle, Font
 			character.texture_index = 0;
 
 			// Generate the character's texture coordinates.
-			character.texcoords[0].x = float(glyph_origin.x) / float(bm_font_face_handle->GetTextureSize());
-			character.texcoords[0].y = float(glyph_origin.y) / float(bm_font_face_handle->GetTextureSize());
-			character.texcoords[1].x = float(glyph_origin.x + character.dimensions.x) / float(bm_font_face_handle->GetTextureSize());
-			character.texcoords[1].y = float(glyph_origin.y + character.dimensions.y) / float(bm_font_face_handle->GetTextureSize());
+			character.texcoords[0].x = float(glyph_origin.x) / float(bm_font_face_handle->GetTextureSize().x);
+			character.texcoords[0].y = float(glyph_origin.y) / float(bm_font_face_handle->GetTextureSize().y);
+			character.texcoords[1].x = float(glyph_origin.x + character.dimensions.x) / float(bm_font_face_handle->GetTextureSize().x);
+			character.texcoords[1].y = float(glyph_origin.y + character.dimensions.y) / float(bm_font_face_handle->GetTextureSize().y);
 
 			characters[i->first] = character;
 
