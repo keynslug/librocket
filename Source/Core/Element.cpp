@@ -1203,6 +1203,12 @@ void Element::GetElementsByTagName(ElementList& elements, const String& tag)
 	return ElementUtilities::GetElementsByTagName(elements, this, tag);
 }
 
+// Get all elements with the given class set on them.
+void Element::GetElementsByClassName(ElementList& elements, const String& class_name)
+{
+	return ElementUtilities::GetElementsByClassName(elements, this, class_name);
+}
+
 // Access the event dispatcher
 EventDispatcher* Element::GetEventDispatcher() const
 {
@@ -1571,7 +1577,7 @@ void Element::ProcessEvent(Event& event)
 			if (overflow_property == OVERFLOW_AUTO ||
 				overflow_property == OVERFLOW_SCROLL)
 			{
-				SetScrollTop(GetScrollTop() + wheel_delta * ElementUtilities::GetLineHeight(this));
+				SetScrollTop(GetScrollTop() + wheel_delta * (GetFontFaceHandle() ? ElementUtilities::GetLineHeight(this) : GetProperty< int >(SCROLL_DEFAULT_STEP_SIZE)));
 				event.StopPropagation();
 			}
 		}
