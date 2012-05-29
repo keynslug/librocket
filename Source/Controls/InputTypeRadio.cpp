@@ -87,10 +87,7 @@ void InputTypeRadio::ProcessEvent(Core::Event& event)
 // Sizes the dimensions to the element's inherent size.
 bool InputTypeRadio::GetIntrinsicDimensions(Rocket::Core::Vector2f& dimensions)
 {
-	dimensions.x = 16;
-	dimensions.y = 16;
-
-	return true;
+	return false;
 }
 
 // Pops all other radio buttons in our form that share our name.

@@ -78,10 +78,7 @@ void InputTypeCheckbox::ProcessEvent(Core::Event& event)
 // Sizes the dimensions to the element's inherent size.
 bool InputTypeCheckbox::GetIntrinsicDimensions(Rocket::Core::Vector2f& dimensions)
 {
-	dimensions.x = 16;
-	dimensions.y = 16;
-
-	return true;
+	return false;
 }
 
 }
