@@ -9,6 +9,11 @@ libRocket uses the time-tested open standards XHTML1.0 and CSS2.0 (while borrowi
 HTML5 and CSS3), and extends them with features suited towards real-time applications. Because of 
 this, you don't have to learn a whole new proprietary technology like other libraries in this space.
 
+## New Features
+
+ - Extensible font providers: FreeType and BMFont alredy there. (great thanks go to @gogoprog and @crazyjul)
+ - Configurable 16-bit index type.
+
 ## Features
 
 - Cross platform architecture: Windows, Mac, Linux, iPhone, etc.
