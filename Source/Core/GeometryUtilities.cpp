@@ -40,13 +40,13 @@ GeometryUtilities::~GeometryUtilities()
 }
 
 // Generates a quad from a position, size and colour.
-void GeometryUtilities::GenerateQuad(Vertex* vertices, int* indices, const Vector2f& origin, const Vector2f& dimensions, const Colourb& colour, int index_offset)
+void GeometryUtilities::GenerateQuad(Vertex* vertices, Index* indices, const Vector2f& origin, const Vector2f& dimensions, const Colourb& colour, Index index_offset)
 {
 	GenerateQuad(vertices, indices, origin, dimensions, colour, Vector2f(0, 0), Vector2f(1, 1), index_offset);
 }
 
 // Generates a quad from a position, size, colour and texture coordinates.
-void GeometryUtilities::GenerateQuad(Vertex* vertices, int* indices, const Vector2f& origin, const Vector2f& dimensions, const Colourb& colour, const Vector2f& top_left_texcoord, const Vector2f& bottom_right_texcoord, int index_offset)
+void GeometryUtilities::GenerateQuad(Vertex* vertices, Index* indices, const Vector2f& origin, const Vector2f& dimensions, const Colourb& colour, const Vector2f& top_left_texcoord, const Vector2f& bottom_right_texcoord, Index index_offset)
 {
 	vertices[0].position = origin;
 	vertices[0].colour = colour;

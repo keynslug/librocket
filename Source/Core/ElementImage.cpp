@@ -186,7 +186,7 @@ void ElementImage::GenerateGeometry()
 	geometry.Release(true);
 
 	std::vector< Rocket::Core::Vertex >& vertices = geometry.GetVertices();
-	std::vector< int >& indices = geometry.GetIndices();
+	std::vector< Index >& indices = geometry.GetIndices();
 
 	vertices.resize(4);
 	indices.resize(6);

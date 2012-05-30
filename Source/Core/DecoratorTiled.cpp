@@ -106,7 +106,7 @@ Vector2f DecoratorTiled::Tile::GetDimensions(Element* element)
 }
 
 // Generates geometry to render this tile across a surface.
-void DecoratorTiled::Tile::GenerateGeometry(std::vector< Vertex >& vertices, std::vector< int >& indices, Element* element, const Vector2f& surface_origin, const Vector2f& surface_dimensions, const Vector2f& tile_dimensions, const Colourb& color_multiplier) const
+void DecoratorTiled::Tile::GenerateGeometry(std::vector< Vertex >& vertices, std::vector< Index >& indices, Element* element, const Vector2f& surface_origin, const Vector2f& surface_dimensions, const Vector2f& tile_dimensions, const Colourb& color_multiplier) const
 {
 	RenderInterface* render_interface = element->GetRenderInterface();
 	TileDataMap::iterator data_iterator = data.find(render_interface);
@@ -184,13 +184,13 @@ void DecoratorTiled::Tile::GenerateGeometry(std::vector< Vertex >& vertices, std
 		return;
 
 	// Resize the vertex and index arrays to fit the new geometry.
-	int index_offset = (int) vertices.size();
+	Index index_offset = (int) vertices.size();
 	vertices.resize(vertices.size() + num_tiles[0] * num_tiles[1] * 4);
 	Vertex* new_vertices = &vertices[0] + index_offset;
 
 	size_t num_indices = indices.size();
 	indices.resize(indices.size() + num_tiles[0] * num_tiles[1] * 6);
-	int* new_indices = &indices[0] + num_indices;
+	Index* new_indices = &indices[0] + num_indices;
 
 	// Generate the vertices for the tiled surface.
 	for (int y = 0; y < num_tiles[1]; y++)

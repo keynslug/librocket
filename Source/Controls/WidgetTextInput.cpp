@@ -735,7 +735,7 @@ Rocket::Core::Vector2f WidgetTextInput::FormatText()
 	// be generated.
 	selection_geometry.Release(true);
 	std::vector< Core::Vertex >& selection_vertices = selection_geometry.GetVertices();
-	std::vector< int >& selection_indices = selection_geometry.GetIndices();
+	std::vector< Core::Index >& selection_indices = selection_geometry.GetIndices();
 
 	// Determine the line-height of the text element.
 	int line_height = Rocket::Core::ElementUtilities::GetLineHeight(parent);
@@ -869,7 +869,7 @@ void WidgetTextInput::GenerateCursor()
 	std::vector< Core::Vertex >& vertices = cursor_geometry.GetVertices();
 	vertices.resize(4);
 
-	std::vector< int >& indices = cursor_geometry.GetIndices();
+	std::vector< Core::Index >& indices = cursor_geometry.GetIndices();
 	indices.resize(6);
 
 	cursor_size.x = 1;

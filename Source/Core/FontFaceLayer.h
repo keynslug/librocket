@@ -84,7 +84,7 @@ public:
 
 		// Generate the geometry for the character.
 		std::vector< Vertex >& character_vertices = geometry[character.texture_index].GetVertices();
-		std::vector< int >& character_indices = geometry[character.texture_index].GetIndices();
+		std::vector< Index >& character_indices = geometry[character.texture_index].GetIndices();
 
 		character_vertices.resize(character_vertices.size() + 4);
 		character_indices.resize(character_indices.size() + 6);

@@ -65,7 +65,7 @@ public:
 	std::vector< Vertex >& GetVertices();
 	/// Returns the geometry's indices. If these are written to, Release() should be called to force a recompile.
 	/// @return The geometry's index array.
-	std::vector< int >& GetIndices();
+	std::vector< Index >& GetIndices();
 
 	/// Gets the geometry's texture.
 	/// @return The geometry's texture.
@@ -85,7 +85,7 @@ private:
 	Element* host_element;
 
 	std::vector< Vertex > vertices;
-	std::vector< int > indices;
+	std::vector< Index > indices;
 	const Texture* texture;
 
 	CompiledGeometryHandle compiled_geometry;

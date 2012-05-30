@@ -88,16 +88,16 @@ void ElementBackground::GenerateBackground()
 	}
 
 	std::vector< Vertex >& vertices = geometry.GetVertices();
-	std::vector< int >& indices = geometry.GetIndices();
+	std::vector< Index >& indices = geometry.GetIndices();
 
-	int index_offset = 0;
+	Index index_offset = 0;
 	vertices.resize(4 * num_boxes);
 	indices.resize(6 * num_boxes);
 
 	if (num_boxes > 0)
 	{
 		Vertex* raw_vertices = &vertices[0];
-		int* raw_indices = &indices[0];
+		Index* raw_indices = &indices[0];
 
 		for (int i = 0; i < element->GetNumBoxes(); ++i)
 			GenerateBackground(raw_vertices, raw_indices, index_offset, element->GetBox(i), colour);
@@ -107,7 +107,7 @@ void ElementBackground::GenerateBackground()
 }
 
 // Generates the background geometry for a single box.
-void ElementBackground::GenerateBackground(Vertex*& vertices, int*& indices, int& index_offset, const Box& box, const Colourb& colour)
+void ElementBackground::GenerateBackground(Vertex*& vertices, Index*& indices, Index& index_offset, const Box& box, const Colourb& colour)
 {
 	Vector2f padded_size = box.GetSize(Box::PADDING);
 	if (padded_size.x <= 0 ||

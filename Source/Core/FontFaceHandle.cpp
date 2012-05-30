@@ -204,7 +204,7 @@ int FontFaceHandle::GenerateString(GeometryList& geometry, const WString& string
 void FontFaceHandle::GenerateLine(Geometry* geometry, const Vector2f& position, int width, Font::Line height, const Colourb& colour) const
 {
 	std::vector< Vertex >& line_vertices = geometry->GetVertices();
-	std::vector< int >& line_indices = geometry->GetIndices();
+	std::vector< Index >& line_indices = geometry->GetIndices();
 
 	float offset;
 	switch (height)

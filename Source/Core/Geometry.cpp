@@ -152,7 +152,7 @@ std::vector< Vertex >& Geometry::GetVertices()
 }
 
 // Returns the geometry's indices. If these are written to, Release() should be called to force a recompile.
-std::vector< int >& Geometry::GetIndices()
+std::vector< Index >& Geometry::GetIndices()
 {
 	return indices;
 }

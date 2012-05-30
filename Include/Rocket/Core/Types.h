@@ -96,4 +96,18 @@ typedef Dictionary ElementAttributes;
 }
 }
 
+// Provide configurable index type definition
+// Will help in such cases when hardware pipeline does not support 32-bit index types
+namespace Rocket {
+namespace Core {
+
+#ifdef ROCKET_SHORT_INDICES
+    typedef short Index;
+#else
+    typedef int Index;
+#endif
+
+}
+}
+
 #endif
