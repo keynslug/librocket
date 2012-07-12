@@ -31,10 +31,12 @@
 #include <Rocket/Core/Header.h>
 #include <Rocket/Core/Property.h>
 
+#include <Rocket/Core/StringHash.h>
+
 namespace Rocket {
 namespace Core {
 
-typedef std::map< String, Property > PropertyMap;
+typedef StringHash< Property >::Type PropertyMap;
 
 /**
 	A dictionary to property names to values.

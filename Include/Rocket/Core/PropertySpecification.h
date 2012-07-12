@@ -32,6 +32,8 @@
 #include <Rocket/Core/Element.h>
 #include <Rocket/Core/PropertyDefinition.h>
 
+#include <Rocket/Core/StringHash.h>
+
 namespace Rocket {
 namespace Core {
 
@@ -101,8 +103,8 @@ public:
 	void SetPropertyDefaults(PropertyDictionary& dictionary) const;
 
 private:
-	typedef std::map< String, PropertyDefinition* > PropertyMap;
-	typedef std::map< String, PropertyShorthandDefinition* > ShorthandMap;
+	typedef StringHash< PropertyDefinition* >::Type PropertyMap;
+	typedef StringHash< PropertyShorthandDefinition* >::Type ShorthandMap;
 
 	PropertyMap properties;
 	ShorthandMap shorthands;
