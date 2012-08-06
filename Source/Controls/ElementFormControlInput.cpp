@@ -152,8 +152,11 @@ void ElementFormControlInput::OnChildRemove(Rocket::Core::Element* child)
 // Handles the "click" event to toggle the control's checked status.
 void ElementFormControlInput::ProcessEvent(Core::Event& event)
 {
-	ElementFormControl::ProcessEvent(event);
-	type->ProcessEvent(event);
+	if (false == IsDisabled())
+	{
+		ElementFormControl::ProcessEvent(event);
+		type->ProcessEvent(event);
+	}
 }
 
 bool ElementFormControlInput::GetIntrinsicDimensions(Rocket::Core::Vector2f& dimensions)
