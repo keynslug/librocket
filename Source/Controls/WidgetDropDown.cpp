@@ -55,7 +55,7 @@ WidgetDropDown::WidgetDropDown(ElementFormControl* element)
 	value_element->SetProperty("overflow", "hidden");
 
 	selection_element->SetProperty("visibility", "hidden");
-	selection_element->SetProperty("z-index", Core::Property(1.0f, Core::Property::NUMBER));
+	// selection_element->SetProperty("z-index", Core::Property(1.0f, Core::Property::NUMBER));
 	selection_element->SetProperty("clip", "none");
 
 	parent_element->AddEventListener("click", this, true);
@@ -178,12 +178,18 @@ void WidgetDropDown::SetSelection(int selection, bool force)
 		selection != selected_option ||
 		value != new_value)
 	{
+		if (selected_option >= 0 && selected_option < (int)options.size())
+			options[selected_option].GetElement()->SetPseudoClass("selected", false);
+		
 		selected_option = selection;
 		value = new_value;
 
 		Rocket::Core::String value_rml;
 		if (selected_option >= 0)
+		{
 			options[selected_option].GetElement()->GetInnerRML(value_rml);
+			options[selected_option].GetElement()->SetPseudoClass("selected", true);
+		}
 
 		value_element->SetInnerRML(value_rml);
 		value_layout_dirty = true;
@@ -367,12 +373,14 @@ void WidgetDropDown::ShowSelectBox(bool show)
 		selection_element->SetProperty("visibility", "visible");
 		value_element->SetPseudoClass("checked", true);
 		button_element->SetPseudoClass("checked", true);
+		parent_element->SetPseudoClass("checked", true);
 	}
 	else
 	{
 		selection_element->SetProperty("visibility", "hidden");
 		value_element->SetPseudoClass("checked", false);
 		button_element->SetPseudoClass("checked", false);
+		parent_element->SetPseudoClass("checked", false);
 	}
 }
 
