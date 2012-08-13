@@ -43,11 +43,12 @@ DecoratorTiledImage::~DecoratorTiledImage()
 }
 
 // Initialises the tiles for the decorator.
-bool DecoratorTiledImage::Initialise(const Tile& _tile, const String& _texture_name, const String& _rcss_path)
+bool DecoratorTiledImage::Initialise(const Tile& _tile, const String& _texture_name, const String& _rcss_path, int stretch_mode)
 {
 	// Load the texture.
 	tile = _tile;
 	tile.texture_index = LoadTexture(_texture_name, _rcss_path);
+	tile.stretch_mode = (StretchMode)(stretch_mode);
 	if (tile.texture_index < 0)
 		return false;
 
@@ -64,7 +65,21 @@ DecoratorDataHandle DecoratorTiledImage::GenerateElementData(Element* element)
 	data->SetTexture(GetTexture());
 
 	// Generate the geometry for the tile.
-	tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), element->GetBox().GetSize(Box::PADDING), tile.GetDimensions(element), color_multiplier);
+	Vector2f box_size = element->GetBox().GetSize(Box::PADDING);
+	switch (tile.stretch_mode) {
+		case NONE:
+			tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), tile.GetDimensions(element), tile.GetDimensions(element), color_multiplier);
+			break;
+		case WIDTH:
+			tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), Vector2f(box_size.x, tile.GetDimensions(element).y), tile.GetDimensions(element), color_multiplier);
+			break;
+		case HEIGHT:
+			tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), Vector2f(tile.GetDimensions(element).x, box_size.y), tile.GetDimensions(element), color_multiplier);
+			break;
+		case COVER:
+			tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), box_size, tile.GetDimensions(element), color_multiplier);
+			break;
+	}
 
 	return reinterpret_cast<DecoratorDataHandle>(data);
 }

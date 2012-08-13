@@ -62,6 +62,17 @@ public:
 	};
 
 	/**
+	 * TODO
+	 */
+	enum StretchMode
+	{
+		NONE = 0,			    // Do not stretches a single tile at all.
+		WIDTH = 1,				// Stretches a tile horizontally across surface width.
+		HEIGHT = 2,				// Stretches a tile vertically across surface height.
+		COVER = 3,				// Stretches a tile across the required surface area.
+	};
+
+	/**
 		Stores the orientation of a tile.
 	 */
 	enum TileOrientation
@@ -115,6 +126,7 @@ public:
 
 		TileRepeatMode repeat_mode;
 		TileOrientation orientation;
+		StretchMode stretch_mode;
 	};
 
 	Colourb & GetColorMultiplier()

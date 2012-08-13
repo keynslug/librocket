@@ -36,6 +36,7 @@ DecoratorTiledImageInstancer::DecoratorTiledImageInstancer()
 {
 	RegisterTileProperty("image", false);
 	RegisterProperty("color-multiplier", "white").AddParser(COLOR);
+	RegisterProperty("stretch-mode", "cover").AddParser("keyword", "none, width, height, cover");
 }
 
 DecoratorTiledImageInstancer::~DecoratorTiledImageInstancer()
@@ -48,14 +49,16 @@ Decorator* DecoratorTiledImageInstancer::InstanceDecorator(const String& ROCKET_
 	DecoratorTiled::Tile tile;
 	String texture_name;
 	String rcss_path;
+	int stretch_mode;
 
 	GetTileProperties(tile, texture_name, rcss_path, properties, "image");
 
 	DecoratorTiledImage* decorator = new DecoratorTiledImage();
 
 	decorator->GetColorMultiplier() = properties.GetProperty("color-multiplier")->value.Get< Colourb >();
+	stretch_mode = properties.GetProperty("stretch-mode")->value.Get< int >();
 
-	if (decorator->Initialise(tile, texture_name, rcss_path))
+	if (decorator->Initialise(tile, texture_name, rcss_path, stretch_mode))
 		return decorator;
 
 	decorator->RemoveReference();
