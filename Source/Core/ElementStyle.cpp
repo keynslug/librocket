@@ -431,15 +431,22 @@ StyleSheet* ElementStyle::GetStyleSheet() const
 
 void ElementStyle::DirtyDefinition()
 {
-	definition_dirty = true;
-	DirtyChildDefinitions();
-	
-	// Dirty the child definition update the element tree
-	Element* parent = element->GetParentNode();
-	while (parent)
+	if (false == definition_dirty)
 	{
-		parent->GetStyle()->child_definition_dirty = true;
-		parent = parent->GetParentNode();
+		definition_dirty = true;
+		DirtyChildDefinitions();
+		
+		// Dirty the child definition update the element tree
+		Element* parent = element->GetParentNode();
+		while (parent)
+		{
+			if (parent->GetStyle()->child_definition_dirty)
+			{
+				break;
+			}
+			parent->GetStyle()->child_definition_dirty = true;
+			parent = parent->GetParentNode();
+		}
 	}
 }
 
