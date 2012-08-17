@@ -37,6 +37,7 @@ ElementBorder::ElementBorder(Element* _element) : geometry(_element)
 {
 	element = _element;
 	border_dirty = true;
+	border_opacity_dirty = true;
 }
 
 ElementBorder::~ElementBorder()
@@ -52,6 +53,12 @@ void ElementBorder::RenderBorder()
 		GenerateBorder();
 	}
 
+	if (border_opacity_dirty)
+	{
+		border_opacity_dirty = false;
+		geometry.SetOpacity(element->GetAbsoluteOpacity());
+	}
+
 	geometry.Render(element->GetAbsoluteOffset(Box::BORDER));
 }
 
@@ -59,6 +66,11 @@ void ElementBorder::RenderBorder()
 void ElementBorder::DirtyBorder()
 {
 	border_dirty = true;
+}
+
+void ElementBorder::DirtyOpacity()
+{
+	border_opacity_dirty = true;
 }
 
 // Generates the border geometry for the element.
@@ -126,15 +138,15 @@ void ElementBorder::GenerateBorder(Vertex*& vertices, Index*& indices, Index& in
 		if (border_width <= 0)
 			continue;
 
-		vertices[0].position = box_corners[i];
-		vertices[1].position = box_corners[i] + box_extrusions[i] + box_extrusions[i == 0 ? 3 : i - 1];
-		vertices[2].position = box_corners[i == 3 ? 0 : i + 1];
-		vertices[3].position = vertices[2].position + box_extrusions[i] + box_extrusions[i == 3 ? 0 : i + 1];
+		vertices[0].Position() = box_corners[i];
+		vertices[1].Position() = box_corners[i] + box_extrusions[i] + box_extrusions[i == 0 ? 3 : i - 1];
+		vertices[2].Position() = box_corners[i == 3 ? 0 : i + 1];
+		vertices[3].Position() = vertices[2].Position() + box_extrusions[i] + box_extrusions[i == 3 ? 0 : i + 1];
 
-		vertices[0].colour = colours[i];
-		vertices[1].colour = colours[i];
-		vertices[2].colour = colours[i];
-		vertices[3].colour = colours[i];
+		vertices[0].SetColour(colours[i]);
+		vertices[1].SetColour(colours[i]);
+		vertices[2].SetColour(colours[i]);
+		vertices[3].SetColour(colours[i]);
 
 		indices[0] = index_offset;
 		indices[1] = index_offset + 3;

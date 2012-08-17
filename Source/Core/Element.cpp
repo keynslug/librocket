@@ -91,6 +91,7 @@ Element::Element(const String& _tag) : absolute_offset(0, 0), relative_offset_ba
 
 	visible = true;
 
+	opacity = 1;
 	z_index = 0;
 
 	local_stacking_context = false;
@@ -1449,8 +1450,13 @@ void Element::OnPropertyChange(const PropertyNameList& changed_properties)
 	}
 
 	// Dirty the background if it's changed.
-	if (changed_properties.find(BACKGROUND_COLOR) != changed_properties.end())
+	if (changed_properties.find(BACKGROUND_COLOR) != changed_properties.end() ||
+		changed_properties.find(BACKGROUND_IMAGE_SRC) != changed_properties.end() ||
+		changed_properties.find(BACKGROUND_IMAGE_MODE) != changed_properties.end())
 		background->DirtyBackground();
+
+	if (changed_properties.find(OPACITY) != changed_properties.end())
+		DirtyOpacity();
 
 	// Dirty the border if it's changed.
 	if (changed_properties.find(BORDER_TOP_WIDTH) != changed_properties.end() ||
@@ -1836,6 +1842,29 @@ void Element::DirtyStructure()
 
 		children[i]->DirtyStructure();
 	}
+}
+
+float Element::GetAbsoluteOpacity() const
+{
+	return opacity;
+}
+
+void Element::DirtyOpacity()
+{
+	opacity = parent ? parent->opacity : 1.0f;
+	if (const Property * p = GetProperty(OPACITY))
+	{
+		opacity *= Math::Clamp(p->value.Get< float >(), 0.0f, 1.0f);
+	}
+
+	background->DirtyOpacity();
+	border->DirtyOpacity();
+
+	for (size_t i = 0; i < children.size(); ++i)
+	{
+		children[i]->DirtyOpacity();
+	}
+
 }
 
 }

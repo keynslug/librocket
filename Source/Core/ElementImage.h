@@ -76,6 +76,8 @@ public:
 	/// @return True.
 	bool GetIntrinsicDimensions(Vector2f& dimensions);
 
+	virtual void DirtyOpacity();
+
 protected:
 	/// Renders the image.
 	virtual void OnRender();
@@ -115,6 +117,7 @@ private:
 	// The geometry used to render this element.
 	Geometry geometry;
 	bool geometry_dirty;
+	bool colour_dirty;
 };
 
 }

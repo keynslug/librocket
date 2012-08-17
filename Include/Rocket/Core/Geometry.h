@@ -67,11 +67,16 @@ public:
 	/// @return The geometry's index array.
 	std::vector< Index >& GetIndices();
 
-	/// Gets the geometry's texture.
 	/// @return The geometry's texture.
+	/// Gets the geometry's texture.
 	const Texture* GetTexture() const;
 	/// Sets the geometry's texture.
 	void SetTexture(const Texture* texture);
+
+	/// Gets the geometry's opacity.
+	float GetOpacity() const;
+	/// Sets the geometry's opacity.
+	void SetOpacity(float opacity);
 
 	/// Releases any previously-compiled geometry, and forces any new geometry to have a compile attempted.
 	/// @param[in] clear_buffers True to also clear the vertex and index buffers, false to leave intact.
@@ -87,6 +92,7 @@ private:
 	std::vector< Vertex > vertices;
 	std::vector< Index > indices;
 	const Texture* texture;
+	float opacity;
 
 	CompiledGeometryHandle compiled_geometry;
 	bool compile_attempted;

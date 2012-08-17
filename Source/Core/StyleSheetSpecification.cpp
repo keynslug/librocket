@@ -231,6 +231,11 @@ void StyleSheetSpecification::RegisterDefaultProperties()
 	// Need some work on this if we are to include images.
 	RegisterProperty(BACKGROUND_COLOR, "transparent", false, false).AddParser(COLOR);
 	RegisterShorthand(BACKGROUND, BACKGROUND_COLOR);
+	RegisterProperty(BACKGROUND_IMAGE_SRC, "", false, false).AddParser("string");
+	RegisterProperty(BACKGROUND_IMAGE_MODE, "cover", false, false).AddParser("keyword", "none, width, height, cover");
+	RegisterShorthand(BACKGROUND_IMAGE, "background-image-src, background-image-mode");
+
+	RegisterProperty(OPACITY, "1.0", false, false).AddParser("number");
 
 	RegisterProperty(COLOR, "white", true, false).AddParser(COLOR);
 

@@ -76,6 +76,8 @@ public:
 	/// Prevents the element from dirtying its document's layout when its text is changed.
 	virtual void SuppressAutoLayout();
 
+	virtual void DirtyOpacity();
+
 protected:
 	virtual void OnPropertyChange(const PropertyNameList& properties);
 

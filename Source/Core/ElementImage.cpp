@@ -39,6 +39,7 @@ ElementImage::ElementImage(const String& tag) : Element(tag), dimensions(-1, -1)
 {
 	ResetCoords();
 	geometry_dirty = false;
+	colour_dirty = false;
 	texture_dirty = true;
 }
 
@@ -82,6 +83,15 @@ void ElementImage::OnRender()
 	// result in a resize).
 	if (geometry_dirty)
 		GenerateGeometry();
+
+	if (colour_dirty)
+	{
+		colour_dirty = false;
+		Colourb colour = GetProperty(COLOR)->value.Get< Colourb >();
+		std::vector< Vertex >& vertices = geometry.GetVertices();
+		for (size_t i = 0; i < vertices.size(); ++i)
+			vertices[i].SetColour(colour);
+	}
 
 	// Render the geometry beginning at this element's content region.
 	geometry.Render(GetAbsoluteOffset(Rocket::Core::Box::CONTENT));
@@ -164,7 +174,7 @@ void ElementImage::OnPropertyChange(const PropertyNameList& changed_properties)
 	// Check if color property has been changed.
 	if (changed_properties.find(COLOR) != changed_properties.end() )
 	{
-		geometry_dirty = true;
+		colour_dirty = true;
 	}
 }
 
@@ -223,6 +233,8 @@ void ElementImage::GenerateGeometry()
 												  texcoords[0],									// top-left texture coordinate
 												  texcoords[1]);								// top-right texture coordinate
 
+	geometry.SetOpacity(GetAbsoluteOpacity());
+
 	geometry_dirty = false;
 }
 
@@ -257,6 +269,12 @@ void ElementImage::ResetCoords()
 
 	for (int i = 0; i < 4; ++i)
 		coords[i] = -1;
+}
+
+void ElementImage::DirtyOpacity()
+{
+	Element::DirtyOpacity();
+	geometry.SetOpacity(GetAbsoluteOpacity());
 }
 
 }

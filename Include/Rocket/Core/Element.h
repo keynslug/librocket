@@ -177,6 +177,8 @@ public:
 	/// Returns the z-index of the element.
 	/// @return The element's z-index.
 	float GetZIndex() const;
+	/// Returns absolute opacity of the element.
+	float GetAbsoluteOpacity() const;
 
 	/// Returns the element's font face handle.
 	/// @return The element's font face handle.
@@ -574,6 +576,8 @@ protected:
 	/// Forces a reevaluation of applicable font effects.
 	virtual void DirtyFont();
 
+	virtual void DirtyOpacity();
+
 	/// Returns the RML of this element and all children.
 	/// @param[out] content The content of this element and those under it, in XML form.
 	virtual void GetRML(String& content);
@@ -658,6 +662,7 @@ private:
 	ElementList deleted_children;
 
 	float z_index;
+	float opacity;
 	bool local_stacking_context;
 	bool local_stacking_context_forced;
 

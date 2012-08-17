@@ -198,11 +198,13 @@ void WidgetTextInput::OnRender()
 	Core::ElementUtilities::SetClippingRegion(text_element);
 
 	Rocket::Core::Vector2f text_translation = parent->GetAbsoluteOffset() - Rocket::Core::Vector2f(parent->GetScrollLeft(), parent->GetScrollTop());
+	selection_geometry.SetOpacity(text_element->GetAbsoluteOpacity());
 	selection_geometry.Render(text_translation);
 
 	if (cursor_visible &&
 		!parent->IsDisabled())
 	{
+		cursor_geometry.SetOpacity(text_element->GetAbsoluteOpacity());
 		cursor_geometry.Render(text_translation + cursor_position);
 	}
 }

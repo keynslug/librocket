@@ -42,12 +42,44 @@ namespace Core {
 
 struct ROCKETCORE_API Vertex
 {
+    
+    Vertex() : opacity(255) {}
+
+    Vector2f & Position() { return position; }
+    Vector2f & TexCoord() { return tex_coord; }
+
+    void SetPosition(float x, float y) { position.x = x; position.y = y; }
+    void SetTexCoord(float x, float y) { tex_coord.x = x; tex_coord.y = y; }
+    void SetPosition(Vector2f const& v) { position = v; }
+    void SetTexCoord(Vector2f const& v) { tex_coord = v; }
+
+    void SetColour(Colourb const& c)
+    {
+        colour = c;
+        alpha = c.alpha;
+        SetOpacity(opacity);
+    }
+
+    void SetOpacity(byte op)
+    {
+        opacity = op;
+        colour.alpha = (unsigned(alpha) * (op + 1)) >> 8;
+    }
+
+    const Vector2f * GetPositionPointer() const { return &position; }
+    const Vector2f * GetTexCoordPointer() const { return &tex_coord; }
+    const Colourb * GetColourPointer() const { return &colour; }
+
+private:
 	/// Two-dimensional position of the vertex (usually in pixels).
 	Vector2f position;
 	/// RGBA-ordered 8-bit / channel colour.
 	Colourb colour;
 	/// Texture coordinate for any associated texture.
 	Vector2f tex_coord;
+    /// Preserved and master alpha
+    byte alpha, opacity;
+
 };
 
 }

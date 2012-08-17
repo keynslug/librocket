@@ -94,6 +94,7 @@ void DecoratorTiledImage::ReleaseElementData(DecoratorDataHandle element_data)
 void DecoratorTiledImage::RenderElement(Element* element, DecoratorDataHandle element_data)
 {
 	Geometry* data = reinterpret_cast< Geometry* >(element_data);
+	data->SetOpacity(element->GetAbsoluteOpacity());
 	data->Render(element->GetAbsoluteOffset(Box::PADDING));
 }
 

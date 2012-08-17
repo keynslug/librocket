@@ -30,6 +30,7 @@
 
 #include <Rocket/Core/Box.h>
 #include <Rocket/Core/Geometry.h>
+#include <Rocket/Core/Texture.h>
 
 namespace Rocket {
 namespace Core {
@@ -51,19 +52,23 @@ public:
 
 	/// Marks the border geometry as dirty.
 	void DirtyBackground();
+	
+	void DirtyOpacity();
 
 private:
 	// Generates the border geometry for the element.
 	void GenerateBackground();
-	// Generates the border geometry for a single box.
-	void GenerateBackground(Vertex*& vertices, Index*& indices, Index& index_offset, const Box& box, const Colourb& colour);
 
 	Element* element;
 
 	// The background geometry.
 	Geometry geometry;
 
-	bool background_dirty;
+	int LoadTexture(const String& texture_name, const String& rcss_path);
+	const Texture * GetTexture(int index) const;
+	std::vector< Texture > textures;
+
+	bool background_dirty, background_opacity_dirty;
 };
 
 }

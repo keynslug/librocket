@@ -48,21 +48,21 @@ void GeometryUtilities::GenerateQuad(Vertex* vertices, Index* indices, const Vec
 // Generates a quad from a position, size, colour and texture coordinates.
 void GeometryUtilities::GenerateQuad(Vertex* vertices, Index* indices, const Vector2f& origin, const Vector2f& dimensions, const Colourb& colour, const Vector2f& top_left_texcoord, const Vector2f& bottom_right_texcoord, Index index_offset)
 {
-	vertices[0].position = origin;
-	vertices[0].colour = colour;
-	vertices[0].tex_coord = top_left_texcoord;
+	vertices[0].SetPosition(origin);
+	vertices[0].SetColour(colour);
+	vertices[0].SetTexCoord(top_left_texcoord);
 
-	vertices[1].position = Vector2f(origin.x + dimensions.x, origin.y);
-	vertices[1].colour = colour;
-	vertices[1].tex_coord = Vector2f(bottom_right_texcoord.x, top_left_texcoord.y);
+	vertices[1].SetPosition(origin.x + dimensions.x, origin.y);
+	vertices[1].SetColour(colour);
+	vertices[1].SetTexCoord(bottom_right_texcoord.x, top_left_texcoord.y);
 
-	vertices[2].position = origin + dimensions;
-	vertices[2].colour = colour;
-	vertices[2].tex_coord = bottom_right_texcoord;
+	vertices[2].SetPosition(origin + dimensions);
+	vertices[2].SetColour(colour);
+	vertices[2].SetTexCoord(bottom_right_texcoord);
 
-	vertices[3].position = Vector2f(origin.x, origin.y + dimensions.y);
-	vertices[3].colour = colour;
-	vertices[3].tex_coord = Vector2f(top_left_texcoord.x, bottom_right_texcoord.y);
+	vertices[3].SetPosition(origin.x, origin.y + dimensions.y);
+	vertices[3].SetColour(colour);
+	vertices[3].SetTexCoord(top_left_texcoord.x, bottom_right_texcoord.y);
 
 	indices[0] = index_offset + 0;
 	indices[1] = index_offset + 3;

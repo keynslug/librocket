@@ -44,6 +44,7 @@ Geometry::Geometry(Element* _host_element)
 	GeometryDatabase::AddGeometry(this);
 
 	texture = NULL;
+	opacity = 1.0f;
 
 	fixed_texcoords = false;
 	compile_attempted = false;
@@ -58,6 +59,7 @@ Geometry::Geometry(Context* _host_context)
 	GeometryDatabase::AddGeometry(this);
 
 	texture = NULL;
+	opacity = 1.0f;
 
 	fixed_texcoords = false;
 	compile_attempted = false;
@@ -123,7 +125,7 @@ void Geometry::Render(const Vector2f& translation)
 					texel_offset.y != 0)
 				{
 					for (size_t i = 0; i < vertices.size(); ++i)
-						vertices[i].position += texel_offset;
+						vertices[i].Position() += texel_offset;
 				}
 			}
 
@@ -170,6 +172,23 @@ void Geometry::SetTexture(const Texture* _texture)
 	Release();
 }
 
+float Geometry::GetOpacity() const
+{
+	return opacity;
+}
+
+void Geometry::SetOpacity(float op)
+{
+	if (op != opacity)
+	{
+		opacity = op;
+		byte value = byte(op * 255.0f);
+		for (size_t i = 0; i < vertices.size(); ++i) {
+			vertices[i].SetOpacity(value);
+		}
+	}
+}
+
 void Geometry::Release(bool clear_buffers)
 {
 	if (compiled_geometry)
@@ -185,6 +204,7 @@ void Geometry::Release(bool clear_buffers)
 		vertices.clear();
 		indices.clear();
 		fixed_texcoords = false;
+		opacity = 1.0f;
 	}
 }
 

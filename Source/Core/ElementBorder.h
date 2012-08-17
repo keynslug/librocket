@@ -51,6 +51,8 @@ public:
 
 	/// Marks the border geometry as dirty.
 	void DirtyBorder();
+	
+	void DirtyOpacity();
 
 private:
 	// Generates the border geometry for the element.
@@ -63,7 +65,7 @@ private:
 	// The border geometry.
 	Geometry geometry;
 
-	bool border_dirty;
+	bool border_dirty, border_opacity_dirty;
 };
 
 }

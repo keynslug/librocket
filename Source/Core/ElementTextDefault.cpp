@@ -93,7 +93,9 @@ void ElementTextDefault::OnRender()
 
 	// Regenerate the geometry if the colour or font configuration has altered.
 	if (geometry_dirty)
+	{
 		GenerateGeometry(font_face_handle);
+	}
 
 	Vector2f translation = GetAbsoluteOffset();
 	
@@ -334,15 +336,17 @@ void ElementTextDefault::OnPropertyChange(const PropertyNameList& changed_proper
 	}
 	else if (colour_changed)
 	{
-		// Force the geometry to be regenerated.
-		geometry_dirty = true;
+		// Re-colour the geometry.
+		for (size_t i = 0; i < geometry.size(); ++i)
+		{
+			std::vector< Vertex >& vertices = geometry[i].GetVertices();
+			for (size_t j = 0; j < vertices.size(); ++j)
+				vertices[j].SetColour(colour);
+		}
 
-		// Re-colour the decoration geometry.
 		std::vector< Vertex >& vertices = decoration.GetVertices();
 		for (size_t i = 0; i < vertices.size(); ++i)
-			vertices[i].colour = colour;
-
-		decoration.Release();
+			vertices[i].SetColour(colour);
 	}
 }
 
@@ -356,6 +360,15 @@ void ElementTextDefault::GetRML(String& content)
 void ElementTextDefault::DirtyFont()
 {
 	font_dirty = true;
+}
+
+void ElementTextDefault::DirtyOpacity()
+{
+	Element::DirtyOpacity();
+	for (size_t i = 0; i < geometry.size(); ++i)
+		geometry[i].SetOpacity(GetAbsoluteOpacity());
+	if (decoration_property != TEXT_DECORATION_NONE)
+		decoration.SetOpacity(GetAbsoluteOpacity());
 }
 
 // Updates the configuration this element uses for its font.
@@ -408,7 +421,10 @@ void ElementTextDefault::GenerateGeometry(FontFaceHandle* font_face_handle, Line
 {
 	line.width = font_face_handle->GenerateString(geometry, line.text, line.position, colour, font_configuration);
 	for (size_t i = 0; i < geometry.size(); ++i)
+	{
+		geometry[i].SetOpacity(GetAbsoluteOpacity());
 		geometry[i].SetHostElement(this);
+	}
 }
 
 // Generates any geometry necessary for rendering a line decoration (underline, strike-through, etc).

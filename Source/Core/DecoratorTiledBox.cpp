@@ -307,7 +307,10 @@ void DecoratorTiledBox::RenderElement(Element* element, DecoratorDataHandle elem
 	DecoratorTiledBoxData* data = reinterpret_cast< DecoratorTiledBoxData* >(element_data);
 
 	for (int i = 0; i < 9; i++)
+	{
+		data->geometry[i]->SetOpacity(element->GetAbsoluteOpacity());
 		data->geometry[i]->Render(translation);
+	}
 }
 
 }
