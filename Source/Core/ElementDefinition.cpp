@@ -400,7 +400,8 @@ void ElementDefinition::BuildPropertyGroup(PropertyGroupMap& groups, const Strin
 				// properties.
 				PropertyDictionary decorator_properties = (*default_definition_iterator).second.second;
 				if (BuildPropertyGroupDictionary(decorator_properties, group_type, default_definition_name, element_properties) > 0)
-					groups[default_definition_name] = PropertyGroup((*default_definition_iterator).second.first, decorator_properties);
+					groups[default_definition_name].first = (*default_definition_iterator).second.first;
+					groups[default_definition_name].second = decorator_properties;
 			}
 		}
 	}
