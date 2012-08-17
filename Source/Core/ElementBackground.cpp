@@ -154,8 +154,8 @@ void ElementBackground::GenerateBackground()
 				padded_size.y <= 0)
 				continue;
 
-			bool rx = (mode == NONE) || (mode == COVER_WIDTH);
-			bool ry = (mode == NONE) || (mode == COVER_HEIGHT);
+			bool rx = (mode == NONE) || (mode == COVER_HEIGHT);
+			bool ry = (mode == NONE) || (mode == COVER_WIDTH);
 
 			if (rx) {
 				if (padded_size.x > dimensions.x) {
