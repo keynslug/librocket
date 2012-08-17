@@ -11,6 +11,10 @@ ifeq ($(FT2_ROOT),)
 FT2_ROOT := $(LOCAL_PATH)/../../libfreetype2
 endif
 
+ifeq ($(BOOST_ROOT),)
+BOOST_ROOT := $(LOCAL_PATH)/../../boost
+endif
+
 ROCKET_SRC_FILES := \
     $(SRC_PATH)/Controls/ElementTabSet.cpp \
     $(SRC_PATH)/Controls/WidgetTextInput.cpp \
@@ -219,6 +223,7 @@ LOCAL_SRC_FILES := $(ROCKET_SRC_FILES)
 
 LOCAL_C_INCLUDES := \
     $(INCLUDE_PATH) \
+    $(BOOST_ROOT)
 
 LOCAL_STATIC_LIBRARIES := freetype2_prebuilt_static
 LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
@@ -240,6 +245,7 @@ LOCAL_SRC_FILES := $(ROCKET_SRC_FILES)
 
 LOCAL_C_INCLUDES := \
     $(INCLUDE_PATH) \
+    $(BOOST_ROOT)
 
 LOCAL_STATIC_LIBRARIES := freetype2_prebuilt_static
 LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
