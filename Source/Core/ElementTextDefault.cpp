@@ -433,14 +433,15 @@ void ElementTextDefault::GenerateGeometry(FontFaceHandle* font_face_handle, Line
 	size_t hint = Geometry::TEXT;
 	line.width = font_face_handle->GenerateString(geometry, line.text, line.position, colour, font_configuration);
 
+	float sn, cs;
 	if (angle != 0.0f)
 	{
 		float a = angle * M_PI / 180.0f;
 		hint |= Geometry::ROTATED;
-		float sn = sinf(a);
-		float cs = cosf(a);
+		sn = sinf(a);
+		cs = cosf(a);
 	}
-	
+
 	for (size_t i = 0; i < geometry.size(); ++i)
 	{
 		if (angle != 0.0f)
