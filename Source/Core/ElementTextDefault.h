@@ -124,6 +124,7 @@ private:
 	bool geometry_dirty;
 
 	Colourb colour;
+	float angle;
 
 	// The decoration geometry we've generated for this string.
 	Geometry decoration;

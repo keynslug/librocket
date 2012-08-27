@@ -54,6 +54,8 @@ ElementTextDefault::ElementTextDefault(const String& tag) : ElementText(tag), co
 
 	font_configuration = -1;
 	font_dirty = true;
+
+	angle = 0;
 }
 
 ElementTextDefault::~ElementTextDefault()
@@ -307,6 +309,15 @@ void ElementTextDefault::OnPropertyChange(const PropertyNameList& changed_proper
 		font_dirty = true;
 	}
 
+	if (changed_properties.find(TEXT_ROTATION) != changed_properties.end())
+	{
+		float a = GetProperty< float >(TEXT_ROTATION);
+		if (a != angle) {
+			angle = a;
+			geometry_dirty = true;
+		}
+	}
+
 	if (changed_properties.find(TEXT_DECORATION) != changed_properties.end())
 	{
 		decoration_property = GetProperty< int >(TEXT_DECORATION);
@@ -419,11 +430,32 @@ void ElementTextDefault::GenerateGeometry(FontFaceHandle* font_face_handle)
 
 void ElementTextDefault::GenerateGeometry(FontFaceHandle* font_face_handle, Line& line)
 {
+	size_t hint = Geometry::TEXT;
 	line.width = font_face_handle->GenerateString(geometry, line.text, line.position, colour, font_configuration);
+
+	if (angle != 0.0f)
+	{
+		float a = angle * M_PI / 180.0f;
+		hint |= Geometry::ROTATED;
+		float sn = sinf(a);
+		float cs = cosf(a);
+	}
+	
 	for (size_t i = 0; i < geometry.size(); ++i)
 	{
+		if (angle != 0.0f)
+		{
+			std::vector< Vertex > & vertices = geometry[i].GetVertices();
+			for (size_t j = 0; j < vertices.size(); ++j)
+			{
+				Vector2f & v = vertices[j].Position(), vc = v;
+				v.x = vc.x * cs - vc.y * sn;
+				v.y = vc.x * sn + vc.y * cs;
+			}
+		}
 		geometry[i].SetOpacity(GetAbsoluteOpacity());
 		geometry[i].SetHostElement(this);
+		geometry[i].SetHints(Geometry::Hint(hint));
 	}
 }
 

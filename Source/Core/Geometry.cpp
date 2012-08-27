@@ -49,6 +49,8 @@ Geometry::Geometry(Element* _host_element)
 	fixed_texcoords = false;
 	compile_attempted = false;
 	compiled_geometry = NULL;
+
+	hints = texture_hint = transparency_hint = NONE;
 }
 
 Geometry::Geometry(Context* _host_context)
@@ -64,6 +66,8 @@ Geometry::Geometry(Context* _host_context)
 	fixed_texcoords = false;
 	compile_attempted = false;
 	compiled_geometry = NULL;
+
+	hints = texture_hint = transparency_hint = NONE;
 }
 
 Geometry::~Geometry()
@@ -143,7 +147,7 @@ void Geometry::Render(const Vector2f& translation)
 
 		// Either we've attempted to compile before (and failed), or the compile we just attempted failed; either way,
 		// render the uncompiled version.
-		render_interface->RenderGeometry(&vertices[0], (int) vertices.size(), &indices[0], (int) indices.size(), texture != NULL ? texture->GetHandle(GetRenderInterface()) : NULL, translation);
+		render_interface->RenderGeometry(&vertices[0], (int) vertices.size(), &indices[0], (int) indices.size(), texture != NULL ? texture->GetHandle(GetRenderInterface()) : NULL, translation, GetHints());
 	}
 }
 
@@ -169,6 +173,7 @@ const Texture* Geometry::GetTexture() const
 void Geometry::SetTexture(const Texture* _texture)
 {
 	texture = _texture;
+	texture_hint = texture ? TEXTURED : NONE;
 	Release();
 }
 
@@ -183,10 +188,21 @@ void Geometry::SetOpacity(float op)
 	{
 		opacity = op;
 		byte value = byte(op * 255.0f);
+		transparency_hint = (value < 255) ? TRANSPARENT : NONE;
 		for (size_t i = 0; i < vertices.size(); ++i) {
 			vertices[i].SetOpacity(value);
 		}
 	}
+}
+
+void Geometry::SetHints(Hint hint)
+{
+	hints = hint;
+}
+
+Geometry::Hint Geometry::GetHints() const
+{
+	return Geometry::Hint(hints | texture_hint | transparency_hint);
 }
 
 void Geometry::Release(bool clear_buffers)

@@ -32,6 +32,7 @@
 #include <Rocket/Core/Header.h>
 #include <Rocket/Core/Texture.h>
 #include <Rocket/Core/Vertex.h>
+#include <Rocket/Core/Geometry.h>
 
 namespace Rocket {
 namespace Core {
@@ -62,7 +63,7 @@ public:
 	/// @param[in] num_indices The number of indices passed to the function. This will always be a multiple of three.
 	/// @param[in] texture The texture to be applied to the geometry. This may be NULL, in which case the geometry is untextured.
 	/// @param[in] translation The translation to apply to the geometry.
-	virtual void RenderGeometry(Vertex* vertices, int num_vertices, Index* indices, int num_indices, TextureHandle texture, const Vector2f& translation) = 0;
+	virtual void RenderGeometry(Vertex* vertices, int num_vertices, Index* indices, int num_indices, TextureHandle texture, const Vector2f& translation, Geometry::Hint hints = Geometry::NONE) = 0;
 
 	/// Called by Rocket when it wants to compile geometry it believes will be static for the forseeable future.
 	/// If supported, this should be return a pointer to an optimised, application-specific version of the data. If

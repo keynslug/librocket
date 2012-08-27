@@ -91,6 +91,7 @@ const String FONT = "font";
 const String TEXT_ALIGN = "text-align";
 const String TEXT_DECORATION = "text-decoration";
 const String TEXT_TRANSFORM = "text-transform";
+const String TEXT_ROTATION = "text-rotation";
 const String WHITE_SPACE = "white-space";
 const String CURSOR = "cursor";
 const String DRAG = "drag";

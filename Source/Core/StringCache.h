@@ -94,6 +94,7 @@ extern const String FONT;
 extern const String TEXT_ALIGN;
 extern const String TEXT_DECORATION;
 extern const String TEXT_TRANSFORM;
+extern const String TEXT_ROTATION;
 extern const String WHITE_SPACE;
 extern const String CURSOR;
 extern const String DRAG;

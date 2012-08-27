@@ -48,6 +48,17 @@ struct Texture;
 class ROCKETCORE_API Geometry
 {
 public:
+	/// Renderer hints
+	enum Hint
+	{
+		NONE = 0,
+		TEXTURED 	= 1 << 0,
+		TRANSPARENT = 1 << 1,
+		ROTATED     = 1 << 2,
+		TEXT        = 1 << 3
+	};
+
+public:
 	Geometry(Element* host_element = NULL);
 	Geometry(Context* host_context);
 	~Geometry();
@@ -82,6 +93,9 @@ public:
 	/// @param[in] clear_buffers True to also clear the vertex and index buffers, false to leave intact.
 	void Release(bool clear_buffers = false);
 
+	Geometry::Hint GetHints() const;
+	void SetHints(Hint);
+
 private:
 	// Returns the host context's render interface.
 	RenderInterface* GetRenderInterface();
@@ -97,6 +111,9 @@ private:
 	CompiledGeometryHandle compiled_geometry;
 	bool compile_attempted;
 	bool fixed_texcoords;
+
+	Hint hints;
+	Hint texture_hint, transparency_hint;
 };
 
 typedef std::vector< Geometry > GeometryList;

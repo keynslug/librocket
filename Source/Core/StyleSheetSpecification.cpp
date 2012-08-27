@@ -249,6 +249,7 @@ void StyleSheetSpecification::RegisterDefaultProperties()
 	RegisterProperty(TEXT_ALIGN, LEFT, true, true).AddParser("keyword", "left, right, center, justify");
 	RegisterProperty(TEXT_DECORATION, "none", true, false).AddParser("keyword", "none, underline"/*"none, underline, overline, line-through"*/);
 	RegisterProperty(TEXT_TRANSFORM, "none", true, true).AddParser("keyword", "none, capitalize, uppercase, lowercase");
+	RegisterProperty(TEXT_ROTATION, "0", true, false).AddParser("number");
 	RegisterProperty(WHITE_SPACE, "normal", true, true).AddParser("keyword", "normal, pre, nowrap, pre-wrap, pre-line");
 
 	RegisterProperty(CURSOR, "auto", true, false)
