@@ -29,11 +29,7 @@
 #include "Plugin.h"
 #include <Rocket/Core/Types.h>
 #include <Rocket/Core.h>
-#ifdef ROCKETCOREFREETYPE_API
-    #include <Rocket/Core/FreeType/FontProvider.h>
-#else
-    #include <Rocket/Core/BitmapFont/FontProvider.h>
-#endif
+#include <Rocket/Core/FreeType/FontProvider.h>
 #include "ElementContextHook.h"
 #include "ElementInfo.h"
 #include "ElementLog.h"
@@ -291,13 +287,8 @@ Plugin* Plugin::GetInstance()
 bool Plugin::LoadFont()
 {
 
-#ifdef ROCKETCOREFREETYPE_API
 	return (Core::FreeType::FontProvider::LoadFontFace(lacuna_regular_freetype, sizeof(lacuna_regular_freetype) / sizeof(unsigned char), "Lacuna", Core::Font::STYLE_NORMAL, Core::Font::WEIGHT_NORMAL) &&
 			Core::FreeType::FontProvider::LoadFontFace(lacuna_italic_freetype, sizeof(lacuna_italic_freetype) / sizeof(unsigned char), "Lacuna", Core::Font::STYLE_ITALIC, Core::Font::WEIGHT_NORMAL));
-#else
-    return (Core::BitmapFont::FontProvider::LoadFontFace(lacuna_regular_bitmap_font, sizeof(lacuna_regular_bitmap_font) / sizeof(unsigned char), "../../assets/BitmapFont/lacuna", Core::Font::STYLE_NORMAL, Core::Font::WEIGHT_NORMAL) &&
-        Core::BitmapFont::FontProvider::LoadFontFace(lacuna_italic_bitmap_font, sizeof(lacuna_italic_bitmap_font) / sizeof(unsigned char), "../../assets/BitmapFont/lacuna", Core::Font::STYLE_ITALIC, Core::Font::WEIGHT_NORMAL));
-#endif
 }
 
 bool Plugin::LoadMenuElement()
